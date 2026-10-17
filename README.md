@@ -11,12 +11,12 @@ An Android archive extractor written in Kotlin with Jetpack Compose.
 1. أنشئ مستودعاً جديداً وارفع محتويات هذا المجلد كما هي.
 2. (اختياري) ضع صورتك `presplash.png` في جذر المستودع بجانب `build.gradle.kts`؛ يستبدلها الـ workflow تلقائياً وتظهر 3 ثوانٍ عند فتح التطبيق.
 3. افتح تبويب **Actions** ← **Build Kaze RAR** ← **Run workflow** (أو أي push إلى `main`).
-4. عند اكتمال البناء نزّل `Kaze-RAR-apk` من قسم **Artifacts** وثبّت `Kaze-RAR.apk`.
+4. عند اكتمال البناء نزّل `Kaze-RAR-release` أو `Kaze-RAR-debug` من قسم **Artifacts** وثبّت ملف الـ APK بداخله.
 
 ## Local build
 
 ```
-gradle assembleRelease      # Gradle 8.9+, JDK 17, Android SDK 35
+gradle assembleDebug assembleRelease   # Gradle 8.9+, JDK 17, Android SDK 35
 ```
 
 ## Notes

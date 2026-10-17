@@ -19,8 +19,10 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+      # The ubuntu-latest runner already ships with the Android SDK
+      # (ANDROID_HOME), so no separate SDK setup step is needed.
+      - name: Accept Android SDK licenses
+        run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
@@ -36,15 +38,26 @@ jobs:
             echo "Using presplash.png from repo root"
           fi
 
-      - name: Build release APK
-        run: gradle assembleRelease --no-daemon --stacktrace
+      - name: Build debug and release APKs
+        run: gradle assembleDebug assembleRelease --no-daemon --stacktrace
 
-      - name: Rename APK
-        run: cp app/build/outputs/apk/release/app-release.apk Kaze-RAR.apk
+      - name: Collect APKs
+        run: |
+          mkdir -p dist
+          cp app/build/outputs/apk/debug/app-debug.apk   dist/Kaze-RAR-debug.apk
+          cp app/build/outputs/apk/release/app-release.apk dist/Kaze-RAR-release.apk
+          ls -la dist
 
-      - name: Upload APK
+      - name: Upload debug APK
         uses: actions/upload-artifact@v4
         with:
-          name: Kaze-RAR-apk
-          path: Kaze-RAR.apk
+          name: Kaze-RAR-debug
+          path: dist/Kaze-RAR-debug.apk
+          if-no-files-found: error
+
+      - name: Upload release APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Kaze-RAR-release
+          path: dist/Kaze-RAR-release.apk
           if-no-files-found: error
