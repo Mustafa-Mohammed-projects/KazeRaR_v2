@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kaze RAR</string>
+    <string name="tagline">افتح أي ملف مضغوط… بأناقة</string>
+    <string name="choose_archive">اختر ملفاً مضغوطاً</string>
+    <string name="saved_hint">تُحفظ الملفات المستخرجة في التنزيلات/Kaze RAR</string>
+    <string name="preparing">جارٍ تجهيز الملف…</string>
+    <string name="reading">جارٍ قراءة المحتويات…</string>
+    <string name="files_count">%1$d ملف</string>
+    <string name="total_size">%1$s الإجمالي</string>
+    <string name="extract_all">فك الضغط عن الكل</string>
+    <string name="extracting">جارٍ فك الضغط…</string>
+    <string name="progress_files">%1$d من %2$d ملف</string>
+    <string name="cancel">إلغاء</string>
+    <string name="done_title">تم فك الضغط!</string>
+    <string name="done_sub">%1$d ملف · %2$s</string>
+    <string name="saved_in">تم الحفظ في %1$s</string>
+    <string name="open_downloads">فتح التنزيلات</string>
+    <string name="new_archive">ملف جديد</string>
+    <string name="error_title">حدث خطأ ما</string>
+    <string name="back">رجوع</string>
+    <string name="password_title">كلمة المرور مطلوبة</string>
+    <string name="password_sub">الملف %1$s محمي</string>
+    <string name="password_hint">كلمة المرور</string>
+    <string name="password_wrong">كلمة المرور خاطئة، حاول مرة أخرى</string>
+    <string name="unlock">فتح</string>
+    <string name="show">إظهار</string>
+    <string name="hide">إخفاء</string>
+    <string name="empty_archive">هذا الملف المضغوط فارغ</string>
+    <string name="err_unsupported">هذا النوع من الملفات غير مدعوم.</string>
+    <string name="err_rar5">صيغة RAR5 غير مدعومة بعد. يعمل RAR4 وZIP و7Z وTAR وGZ وBZ2 وXZ.</string>
+    <string name="err_zip_encrypted">ملف ZIP هذا محمي بكلمة مرور أو يستخدم طريقة ضغط غير مدعومة.</string>
+    <string name="err_corrupt">يبدو أن الملف تالف أو ناقص.</string>
+    <string name="err_io">تعذّرت كتابة الملفات. تحقق من المساحة الحرة.</string>
+</resources>

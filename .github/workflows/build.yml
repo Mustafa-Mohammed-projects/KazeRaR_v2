@@ -1,0 +1,50 @@
+name: Build Kaze RAR
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 8.9
+
+      # Put your own presplash.png in the repo root to replace the bundled placeholder.
+      - name: Use custom presplash.png (if provided)
+        run: |
+          if [ -f presplash.png ]; then
+            mkdir -p app/src/main/res/drawable-nodpi
+            cp presplash.png app/src/main/res/drawable-nodpi/presplash.png
+            echo "Using presplash.png from repo root"
+          fi
+
+      - name: Build release APK
+        run: gradle assembleRelease --no-daemon --stacktrace
+
+      - name: Rename APK
+        run: cp app/build/outputs/apk/release/app-release.apk Kaze-RAR.apk
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Kaze-RAR-apk
+          path: Kaze-RAR.apk
+          if-no-files-found: error

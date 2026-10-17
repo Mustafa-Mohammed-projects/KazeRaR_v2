@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kaze RAR</string>
+    <string name="tagline">Open any archive. Beautifully.</string>
+    <string name="choose_archive">Choose archive</string>
+    <string name="saved_hint">Extracted files are saved to Downloads/Kaze RAR</string>
+    <string name="preparing">Preparing archive…</string>
+    <string name="reading">Reading contents…</string>
+    <string name="files_count">%1$d files</string>
+    <string name="total_size">%1$s total</string>
+    <string name="extract_all">Extract all</string>
+    <string name="extracting">Extracting…</string>
+    <string name="progress_files">%1$d of %2$d files</string>
+    <string name="cancel">Cancel</string>
+    <string name="done_title">All done!</string>
+    <string name="done_sub">%1$d files · %2$s</string>
+    <string name="saved_in">Saved in %1$s</string>
+    <string name="open_downloads">Open Downloads</string>
+    <string name="new_archive">New archive</string>
+    <string name="error_title">Something went wrong</string>
+    <string name="back">Back</string>
+    <string name="password_title">Password required</string>
+    <string name="password_sub">%1$s is protected</string>
+    <string name="password_hint">Password</string>
+    <string name="password_wrong">Wrong password, try again</string>
+    <string name="unlock">Unlock</string>
+    <string name="show">Show</string>
+    <string name="hide">Hide</string>
+    <string name="empty_archive">This archive is empty</string>
+    <string name="err_unsupported">This file type isn\'t supported.</string>
+    <string name="err_rar5">RAR5 archives aren\'t supported yet. RAR4, ZIP, 7Z, TAR, GZ, BZ2 and XZ work.</string>
+    <string name="err_zip_encrypted">This ZIP is password-protected or uses an unsupported compression method.</string>
+    <string name="err_corrupt">The archive looks damaged or incomplete.</string>
+    <string name="err_io">Couldn\'t write the files. Check your free storage.</string>
+</resources>
